@@ -40,7 +40,8 @@ repositories {
   mavenCentral()
 }
 
-def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+//def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+def gitSha = 'git rev-parse --short HEAD'
 def buildTime = new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone("UTC"))
 
 def isTravis = "true".equals(System.getenv("TRAVIS"))
@@ -164,8 +165,8 @@ dependencies {
   androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
   // TODO https://code.google.com/p/android-test-kit/issues/detail?id=157
   //androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2'
-  androidTestCompile 'com.android.support.test:runner:0.4.1'
-  androidTestCompile 'com.android.support.test:rules:0.4.1'
+  androidTestCompile 'com.android.support.test:runner:0.4'
+  androidTestCompile 'com.android.support.test:rules:0.4'
   androidTestCompile 'com.squareup.spoon:spoon-client:1.2.0'
 
   testCompile 'junit:junit:4.12'
